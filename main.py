@@ -323,11 +323,11 @@ class GUI(QMainWindow):
     # - for videos save labelled mask and original frame
     def b_sav_(self):
         if self.file_vid == 0:
-            outfile = 'media/outputs/%s-mask.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1])
-            outfile1 = 'media/outputs/%s.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1])
+            outfile = 'media/%s-mask.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1])
+            outfile1 = 'media/%s.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1])
         else:
-            outfile = 'media/outputs/%s-frame-%s-mask.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
-            outfile1 = 'media/outputs/%s-frame-%s.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
+            outfile = 'media/%s-frame-%s-mask.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
+            outfile1 = 'media/%s-frame-%s.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
         original = '%s' % self.filename[self.i].split("/")[-1]
         mask = '%s' % outfile.split("/")[-1]
         tf = '%s' % (time() - self.ti)
@@ -343,7 +343,7 @@ class GUI(QMainWindow):
     # Save time stamps csv and close app
     def b_ext_(self):
         if self.flag_file == 1:
-            np.savetxt("media/outputs/timestamps.csv", self.d_time, delimiter=", ", fmt='%s')
+            np.savetxt("media/timestamps.csv", self.d_time, delimiter=", ", fmt='%s')
         self.close()
         QApplication.quit()
 
@@ -599,6 +599,7 @@ class GUI(QMainWindow):
         self.mask = np.zeros((640, 480), np.uint8)
         img = cv2.imread('media/.icons/INTRO.png', 1)
         img = cv2.resize(img, (640, 480))
+        self.colors = np.random.randint(20,255,(len(self.labels)-1,3))
         self.colors = []
         for n in range(len(self.labels)-1):
             color = []
