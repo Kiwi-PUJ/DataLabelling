@@ -18,6 +18,7 @@ from PyQt5.QtCore import Qt
 import cv2
 import numpy as np
 from time import time
+import random
 
 # ---------------------------------------------------------------------
 class GUI(QMainWindow):
@@ -73,7 +74,7 @@ class GUI(QMainWindow):
         # Open file button
         f = QPushButton(self)
         f.setText('&Open file')
-        f.setIcon(QIcon('media/icons/file.png'))
+        f.setIcon(QIcon('media/.icons/file.png'))
         f.move(10, 15)
         f.setShortcut('Ctrl+o')
         f.clicked.connect(self.open_)
@@ -98,18 +99,20 @@ class GUI(QMainWindow):
         # New label button
         self.Button_n = QPushButton(self)
         self.Button_n.setText('&New')
-        self.Button_n.setIcon(QIcon('media/icons/new.png'))
+        self.Button_n.setIcon(QIcon('media/.icons/new.png'))
         self.Button_n.setEnabled(False)
         self.Button_n.setShortcut('Ctrl+n')
         self.Button_n.move(10, 120)
         self.Button_n.clicked.connect(self.new_label)
 
+        # Read label list
+        labels = open('/tmp/labels.txt', 'r').read()
+        self.labels = list(labels.split("\n")) 
+
         # Label list
         self.Label_n = QComboBox(self)
-        self.Label_n.addItem("People")
-        self.Label_n.addItem("Vehicles")
-        self.Label_n.addItem("Street")
-        self.Label_n.addItem("Sidewalk")
+        for n in range(len(self.labels)-1):
+            self.Label_n.addItem(self.labels[n])
         self.Label_n.move(10, 150)
         self.Label_n.setEnabled(False)
         self.Label_n.activated[str].connect(self.sel_LN)
@@ -143,7 +146,7 @@ class GUI(QMainWindow):
         # Previous image button
         self.b_pre = QPushButton(self)
         self.b_pre.setText('Previous')
-        self.b_pre.setIcon(QIcon('media/icons/undo.png'))
+        self.b_pre.setIcon(QIcon('media/.icons/undo.png'))
         self.b_pre.move(10, height - 110)
         self.b_pre.setShortcut('Ctrl+Left')
         self.b_pre.setEnabled(False)
@@ -152,7 +155,7 @@ class GUI(QMainWindow):
         # Next image button
         self.b_nxt = QPushButton(self)
         self.b_nxt.setText('Next')
-        self.b_nxt.setIcon(QIcon('media/icons/redo.png'))
+        self.b_nxt.setIcon(QIcon('media/.icons/redo.png'))
         self.b_nxt.move(10, height - 80)
         self.b_nxt.setShortcut('Ctrl+Right')
         self.b_nxt.setEnabled(False)
@@ -161,7 +164,7 @@ class GUI(QMainWindow):
         # Save labels button
         self.b_sav = QPushButton(self)
         self.b_sav.setText('&SAVE')
-        self.b_sav.setIcon(QIcon('media/icons/save.png'))
+        self.b_sav.setIcon(QIcon('media/.icons/save.png'))
         self.b_sav.move(10, height - 30)
         self.b_sav.setEnabled(False)
         self.b_sav.setShortcut('Ctrl+s')
@@ -170,7 +173,7 @@ class GUI(QMainWindow):
         # Exit button
         b_ext = QPushButton(self)
         b_ext.setText('EXIT')
-        b_ext.setIcon(QIcon('media/icons/exit.png'))
+        b_ext.setIcon(QIcon('media/.icons/exit.png'))
         b_ext.move(width - 110, height - 30)
         b_ext.clicked.connect(self.b_ext_)
 
@@ -214,25 +217,13 @@ class GUI(QMainWindow):
     # Label selection function
     # Select the label of the segmented image, and created the labelled image file
     def sel_LN(self, text):
-        if text == '-Label':
-            self.show_alert()
-        if text == 'People':
-            self.contour_()
-            cv2.drawContours(self.img_out, self.contours, -1, 1, thickness=cv2.FILLED)
-            cv2.drawContours(self.img_label, self.contours, -1, (0,255,0), thickness=cv2.FILLED)
-        if text == 'Vehicles':
-            self.contour_()
-            cv2.drawContours(self.img_out, self.contours, -1, 2, thickness=cv2.FILLED)
-            cv2.drawContours(self.img_label, self.contours, -1, (255,0,0), thickness=cv2.FILLED)
-        if text == 'Street':
-            self.contour_()
-            cv2.drawContours(self.img_out, self.contours, -1, 3, thickness=cv2.FILLED)
-            cv2.drawContours(self.img_label, self.contours, -1, (0,0,255), thickness=cv2.FILLED)
-        if text == 'Sidewalk':
-            self.contour_()
-            cv2.drawContours(self.img_out, self.contours, -1, 4, thickness=cv2.FILLED)
-            cv2.drawContours(self.img_label, self.contours, -1, (128,0,128), thickness=cv2.FILLED)
-
+        for n in range(len(self.labels)-1):
+            if text == self.labels[n]:
+                self.contour_()
+                self.colors=tuple(self.colors)
+                cv2.drawContours(self.img_out, self.contours, -1, n+1, thickness=cv2.FILLED)
+                cv2.drawContours(self.img_label, self.contours, -1, self.colors[n], thickness=cv2.FILLED)
+        
     # ---------------------------------------------------------------------
     # Contour function
     # Determine the contour of the segmented image
@@ -334,14 +325,15 @@ class GUI(QMainWindow):
         if self.file_vid == 0:
             outfile = 'media/outputs/%s-mask.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1])
             outfile1 = 'media/outputs/%s.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1])
-            cv2.imwrite(outfile1, self.img_in)
         else:
             outfile = 'media/outputs/%s-frame-%s-mask.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
+            outfile1 = 'media/outputs/%s-frame-%s.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
         original = '%s' % self.filename[self.i].split("/")[-1]
         mask = '%s' % outfile.split("/")[-1]
         tf = '%s' % (time() - self.ti)
         self.d_time[self.j, ...] = [original, mask, tf]
         cv2.imwrite(outfile, self.img_out)
+        cv2.imwrite(outfile1, self.img_in)
         self.j += 1
         self.flag_save = 0
         self.flag_file = 1
@@ -484,7 +476,7 @@ class GUI(QMainWindow):
         self.flag_circle_fg = False
         self.flag_circle_bg = False
         cv2.grabCut(self.img_in, self.mask, None, self.BGD_model, self.FGD_model, 1, cv2.GC_INIT_WITH_MASK)
-        self.mask_out = np.where((self.mask == 1) | (self.mask == 3), 1, 0).astype('uint8')  
+        self.mask_out = np.where((self.mask == 1) | (self.mask == 3), 1, 0).astype('uint8')
         # Si valor es 1 o 3 (primer plano), se cambia a 1 (primer plano seguro), valores de 0 y 2 (fondo) cambian a 0 (fondo seguro)
         self.output = cv2.bitwise_and(self.img_in, self.img_in, mask=self.mask_out)
         self.showImage_(self.output)
@@ -605,8 +597,15 @@ class GUI(QMainWindow):
         self.start = False
         self.initial_mask = np.zeros((640, 480), np.uint8) 
         self.mask = np.zeros((640, 480), np.uint8)
-        img = cv2.imread('media/inputs/INTRO.png', 1)
+        img = cv2.imread('media/.icons/INTRO.png', 1)
         img = cv2.resize(img, (640, 480))
+        self.colors = np.random.randint(20,255,(len(self.labels)-1,3))
+        self.colors = []
+        for n in range(len(self.labels)-1):
+            color = []
+            for _ in range(3):
+                color.append(random.randrange(0, 255))
+            self.colors.append(tuple(color))
         self.showImage_(img)
 
 # ---------------------------------------------------------------------
