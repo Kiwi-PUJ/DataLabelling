@@ -599,7 +599,6 @@ class GUI(QMainWindow):
         self.mask = np.zeros((640, 480), np.uint8)
         img = cv2.imread('media/.icons/INTRO.png', 1)
         img = cv2.resize(img, (640, 480))
-        self.colors = np.random.randint(20,255,(len(self.labels)-1,3))
         self.colors = []
         for n in range(len(self.labels)-1):
             color = []
