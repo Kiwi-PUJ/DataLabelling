@@ -26,7 +26,6 @@ RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requ
 
 COPY main.py /tmp/main.py
 COPY /media /media
-COPY colors.txt /tmp/colors.txt
 COPY labels.txt /tmp/labels.txt
 
 ENTRYPOINT ["/bin/bash", "-c", "python3 /tmp/main.py"]
