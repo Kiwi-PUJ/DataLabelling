@@ -3,10 +3,10 @@
 # Electronic Enginnering
 # Developed by:
 # - Andrea Juliana Ruiz Gomez
-#       Mail: <andrea_ruiz@javeriana.edu.co> 
+#       Mail: <andrea_ruiz@javeriana.edu.co>
 #       GitHub: <andrearuizg>
-# - Pedro Eli Ruiz Zarate 
-#       Mail: <pedro.ruiz@javeriana.edu.co> 
+# - Pedro Eli Ruiz Zarate
+#       Mail: <pedro.ruiz@javeriana.edu.co>
 #       GitHub: <PedroRuizCode>
 # ---------------------------------------------------------------------
 
@@ -19,6 +19,7 @@ import cv2
 import numpy as np
 from time import time
 import random
+
 
 # ---------------------------------------------------------------------
 class GUI(QMainWindow):
@@ -36,6 +37,7 @@ class GUI(QMainWindow):
 
         self.setGeometry(10, 10, width, height)
         self.setWindowTitle("Kiwi & PUJ - Labelling software")
+        self.setWindowIcon(QIcon("media/.icons/INTRO.png"))
 
         self.flag_file = 0
 
@@ -107,11 +109,11 @@ class GUI(QMainWindow):
 
         # Read label list
         labels = open('/tmp/labels.txt', 'r').read()
-        self.labels = list(labels.split("\n")) 
+        self.labels = list(labels.split("\n"))
 
         # Label list
         self.Label_n = QComboBox(self)
-        for n in range(len(self.labels)-1):
+        for n in range(len(self.labels) - 1):
             self.Label_n.addItem(self.labels[n])
         self.Label_n.move(10, 150)
         self.Label_n.setEnabled(False)
@@ -217,13 +219,13 @@ class GUI(QMainWindow):
     # Label selection function
     # Select the label of the segmented image, and created the labelled image file
     def sel_LN(self, text):
-        for n in range(len(self.labels)-1):
+        for n in range(len(self.labels) - 1):
             if text == self.labels[n]:
                 self.contour_()
-                self.colors=tuple(self.colors)
-                cv2.drawContours(self.img_out, self.contours, -1, n+1, thickness=cv2.FILLED)
+                self.colors = tuple(self.colors)
+                cv2.drawContours(self.img_out, self.contours, -1, n + 1, thickness=cv2.FILLED)
                 cv2.drawContours(self.img_label, self.contours, -1, self.colors[n], thickness=cv2.FILLED)
-        
+
     # ---------------------------------------------------------------------
     # Contour function
     # Determine the contour of the segmented image
@@ -231,7 +233,7 @@ class GUI(QMainWindow):
         imgray = cv2.cvtColor(self.output, cv2.COLOR_BGR2GRAY)
         ret, thresh = cv2.threshold(imgray, 1, 255, 0)
         self.contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    
+
     # ---------------------------------------------------------------------
     # New label button function
     # Set enable flag true
@@ -319,14 +321,15 @@ class GUI(QMainWindow):
     # ---------------------------------------------------------------------
     # Save button function
     # Save files
-    # - for pictures only save the labelled mask 
+    # - for pictures only save the labelled mask
     # - for videos save labelled mask and original frame
     def b_sav_(self):
         if self.file_vid == 0:
             outfile = 'media/%s-mask.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1])
             outfile1 = 'media/%s.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1])
         else:
-            outfile = 'media/%s-frame-%s-mask.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
+            outfile = 'media/%s-frame-%s-mask.png' % (
+            (self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
             outfile1 = 'media/%s-frame-%s.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
         original = '%s' % self.filename[self.i].split("/")[-1]
         mask = '%s' % outfile.split("/")[-1]
@@ -349,9 +352,10 @@ class GUI(QMainWindow):
 
     # ---------------------------------------------------------------------
     # Open button function
-    # Open file dialog window 
+    # Open file dialog window
     def open_(self):
-        self.filename, _ = QFileDialog.getOpenFileNames(None, 'Buscar Imagen', '.', 'Image Files (*.png *.jpg *.jpeg *.bmp *.mp4)')
+        self.filename, _ = QFileDialog.getOpenFileNames(None, 'Buscar Imagen', '.',
+                                                        'Image Files (*.png *.jpg *.jpeg *.bmp *.mp4)')
         self.d_time = np.zeros((10000, 3), dtype='U255')
         self.d_time[0, ...] = ['Img. Original', 'Img. Mask', 'Time (s)']
         self.i = 0
@@ -366,16 +370,16 @@ class GUI(QMainWindow):
 
     # ---------------------------------------------------------------------
     # Load function
-    # Open file in open cv 
+    # Open file in open cv
     def load(self):
         self.flag_save = 0
         if self.i < len(self.filename):
             if self.filename[self.i].split(".")[-1] in ['png', 'jpg', 'jpeg', 'bmp']:
                 self.img_in = cv2.imread(self.filename[self.i], cv2.IMREAD_UNCHANGED)
-                self.img_in = cv2.resize(self.img_in, (640, 480))  
-                self.img_copy = self.img_in.copy()  
-                self.img_out = np.zeros((480, 640), np.uint8)  
-                self.img_label = self.img_in.copy()  
+                self.img_in = cv2.resize(self.img_in, (640, 480))
+                self.img_copy = self.img_in.copy()
+                self.img_out = np.zeros((480, 640), np.uint8)
+                self.img_label = self.img_in.copy()
                 self.showImage_(self.img_in)
             else:
                 self.file_vid = 1
@@ -396,16 +400,16 @@ class GUI(QMainWindow):
 
     # ---------------------------------------------------------------------
     # Load video function
-    # Open video frames 
+    # Open video frames
     def load_vid(self):
         self.sh_spin_val()
         if self.vid.isOpened():
             if (self.frame_act <= self.length) and (self.frame_act > 0):
                 self.vid.set(1, self.frame_act)
                 ret, self.img_in = self.vid.read()
-                self.img_in = cv2.resize(self.img_in, (640, 480)) 
+                self.img_in = cv2.resize(self.img_in, (640, 480))
                 self.img_copy = self.img_in.copy()
-                self.img_out = np.zeros((480, 640), np.uint8) 
+                self.img_out = np.zeros((480, 640), np.uint8)
                 self.img_label = self.img_in.copy()
                 self.showImage_(self.img_in)
             else:
@@ -417,7 +421,7 @@ class GUI(QMainWindow):
 
     # ---------------------------------------------------------------------
     # Show image function
-    # Show picture in Pixmap 
+    # Show picture in Pixmap
     def showImage_(self, image):
         size = image.shape
         step = image.size / size[0]
@@ -440,9 +444,9 @@ class GUI(QMainWindow):
         self.b.setEnabled(True)
         self.c.setEnabled(True)
         self.d.setEnabled(True)
-        self.flag_rect = True  
-        self.flag_circle_fg = False 
-        self.flag_circle_bg = False 
+        self.flag_rect = True
+        self.flag_circle_fg = False
+        self.flag_circle_bg = False
         self.ini_points = []
         self.ti = time()
 
@@ -452,17 +456,19 @@ class GUI(QMainWindow):
     def background_(self):
         self.flag_rect = False
         self.flag_circle_fg = False
-        self.flag_circle_bg = True 
+        self.flag_circle_bg = True
 
-    # ---------------------------------------------------------------------
+        # ---------------------------------------------------------------------
+
     # Foreground button function
     # Enable flags to draw the foreground
     def foreground_(self):
         self.flag_rect = False
         self.flag_circle_fg = True
-        self.flag_circle_bg = False 
+        self.flag_circle_bg = False
 
-    # ---------------------------------------------------------------------
+        # ---------------------------------------------------------------------
+
     # Iteration button function
     # Iteration to make the segmented image
     def iteration_(self):
@@ -472,7 +478,7 @@ class GUI(QMainWindow):
         self.b_seg.setEnabled(True)
         self.b_lab.setEnabled(True)
         self.flag_save = 1
-        self.flag_rect = False  
+        self.flag_rect = False
         self.flag_circle_fg = False
         self.flag_circle_bg = False
         cv2.grabCut(self.img_in, self.mask, None, self.BGD_model, self.FGD_model, 1, cv2.GC_INIT_WITH_MASK)
@@ -483,7 +489,7 @@ class GUI(QMainWindow):
 
     # ---------------------------------------------------------------------
     # Dark theme  function
-    # Set dark or white theme 
+    # Set dark or white theme
     def dark_(self):
         if self.dark.isChecked() == True:
             palette = QPalette()
@@ -515,7 +521,7 @@ class GUI(QMainWindow):
 
     # ---------------------------------------------------------------------
     # Show alert function
-    # Show alert when the labelled picture is not save 
+    # Show alert when the labelled picture is not save
     def show_alert(self):
         warning = QMessageBox(self)
         warning.setIcon(QMessageBox.Warning)
@@ -525,13 +531,13 @@ class GUI(QMainWindow):
 
     # ---------------------------------------------------------------------
     # Maximized function
-    # Maximized window 
+    # Maximized window
     def maximized(self):
         self.showMaximized()
 
     # ---------------------------------------------------------------------
     # Full-screen function
-    # Full-screen window 
+    # Full-screen window
     def fullScreen_(self):
         if self.fs.isChecked() == True:
             self.showFullScreen()
@@ -540,7 +546,7 @@ class GUI(QMainWindow):
 
     # ---------------------------------------------------------------------
     # Mouse move function
-    # Make the rectangle or circles when user is pressing the mouse  
+    # Make the rectangle or circles when user is pressing the mouse
     def mouse_move(self, event):
         x = event.pos().x()
         y = event.pos().y()
@@ -586,27 +592,28 @@ class GUI(QMainWindow):
 
     # ---------------------------------------------------------------------
     # Reset function
-    # Reset app 
+    # Reset app
     def reset_(self):
         self.BGD_model = np.zeros((1, 65), np.float64)
         self.FGD_model = np.zeros((1, 65), np.float64)
         self.ini_points, self.fin_points, self.temp_points, self.corners = [], [], [], []
-        self.flag_rect = False 
+        self.flag_rect = False
         self.flag_circle_fg = False
         self.flag_circle_bg = False
         self.start = False
-        self.initial_mask = np.zeros((640, 480), np.uint8) 
+        self.initial_mask = np.zeros((640, 480), np.uint8)
         self.mask = np.zeros((640, 480), np.uint8)
         img = cv2.imread('media/.icons/INTRO.png', 1)
         img = cv2.resize(img, (640, 480))
-        self.colors = np.random.randint(20,255,(len(self.labels)-1,3))
+        self.colors = np.random.randint(20, 255, (len(self.labels) - 1, 3))
         self.colors = []
-        for n in range(len(self.labels)-1):
+        for n in range(len(self.labels) - 1):
             color = []
             for _ in range(3):
                 color.append(random.randrange(0, 255))
             self.colors.append(tuple(color))
         self.showImage_(img)
+
 
 # ---------------------------------------------------------------------
 if __name__ == '__main__':
