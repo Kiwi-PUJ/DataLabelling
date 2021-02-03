@@ -324,15 +324,16 @@ class GUI(QMainWindow):
     def b_sav_(self):
         if self.file_vid == 0:
             outfile = 'media/%s-mask.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1])
+            outfile1 = 'media/%s.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1])
         else:
             outfile = 'media/%s-frame-%s-mask.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
             outfile1 = 'media/%s-frame-%s.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
-            cv2.imwrite(outfile1, self.img_in)
         original = '%s' % self.filename[self.i].split("/")[-1]
         mask = '%s' % outfile.split("/")[-1]
         tf = '%s' % (time() - self.ti)
         self.d_time[self.j, ...] = [original, mask, tf]
         cv2.imwrite(outfile, self.img_out)
+        cv2.imwrite(outfile1, self.img_in)
         self.j += 1
         self.flag_save = 0
         self.flag_file = 1
