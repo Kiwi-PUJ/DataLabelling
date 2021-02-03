@@ -37,7 +37,7 @@ class GUI(QMainWindow):
 
         self.setGeometry(10, 10, width, height)
         self.setWindowTitle("Kiwi & PUJ - Labelling software")
-        self.setWindowIcon(QIcon("media/.icons/INTRO.png"))
+        self.setWindowIcon(QIcon("media/.icons/ICON.png"))
 
         self.flag_file = 0
 
@@ -328,8 +328,7 @@ class GUI(QMainWindow):
             outfile = 'media/%s-mask.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1])
             outfile1 = 'media/%s.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1])
         else:
-            outfile = 'media/%s-frame-%s-mask.png' % (
-            (self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
+            outfile = 'media/%s-frame-%s-mask.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
             outfile1 = 'media/%s-frame-%s.png' % ((self.filename[self.i].split(".")[0]).split("/")[-1], self.frame_act)
         original = '%s' % self.filename[self.i].split("/")[-1]
         mask = '%s' % outfile.split("/")[-1]
@@ -354,8 +353,7 @@ class GUI(QMainWindow):
     # Open button function
     # Open file dialog window
     def open_(self):
-        self.filename, _ = QFileDialog.getOpenFileNames(None, 'Buscar Imagen', '.',
-                                                        'Image Files (*.png *.jpg *.jpeg *.bmp *.mp4)')
+        self.filename, _ = QFileDialog.getOpenFileNames(None, 'Buscar Imagen', '.','Image Files (*.png *.jpg *.jpeg *.bmp *.mp4)')
         self.d_time = np.zeros((10000, 3), dtype='U255')
         self.d_time[0, ...] = ['Img. Original', 'Img. Mask', 'Time (s)']
         self.i = 0
@@ -426,7 +424,6 @@ class GUI(QMainWindow):
         size = image.shape
         step = image.size / size[0]
         qformat = QImage.Format_Indexed8
-
         if len(size) == 3:
             if size[2] == 4:
                 qformat = QImage.Format_RGBA8888
