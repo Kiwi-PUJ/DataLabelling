@@ -11,10 +11,10 @@ Considering the impact on the world of artificial intelligence and process autom
 To facilitate the image segmentation process, the application based on [GrabCut](https://docs.opencv.org/master/d8/d83/tutorial_py_grabcut.html) available in this repository was developed.
 </p>
 <p align="center">
-<img src ="./doc/INTRO.png" alt="drawing" width="500"/>
+<img src ="./doc/INTRO.png" alt="drawing" width="300"/>
 </p>
 
-**Status**: In development (code updates may be submitted after publication) x
+**Status**: In development (code updates may be submitted after publication)
 
 ---
 ### ***Install Image Labelling App***
