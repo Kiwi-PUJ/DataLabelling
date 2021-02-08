@@ -1,1 +1,3 @@
 Sidewalk
+People
+Robot

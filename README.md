@@ -3,7 +3,7 @@
 
 </p>
 <p align="center">
-<img src ="./doc/log.png" alt="drawing" width="1200"/>
+<img src ="./doc/media/log.png" alt="Logo" width="1200"/>
 </p>
 
 Considering the impact on the world of artificial intelligence and process automation in recent years, semi-autonomous systems have been developed that act responding to signals from their environment. An example is food delivery robots that establish their trajectory from images of their surroundings. To develop a system like this it is necessary to make use of segmentation algorithms trained to recognize obstacles, and to train these algorithms, databases of segmented images corresponding to the environment in which the robot will operate are required.
@@ -11,7 +11,7 @@ Considering the impact on the world of artificial intelligence and process autom
 To facilitate the image segmentation process, the application based on [GrabCut](https://docs.opencv.org/master/d8/d83/tutorial_py_grabcut.html) available in this repository was developed.
 </p>
 <p align="center">
-<img src ="./doc/INTRO.png" alt="drawing" width="300"/>
+<img src ="./doc/media/INTRO.png" alt="Intro" width="300"/>
 </p>
 
 **Status**: In development (code updates may be submitted after publication)
@@ -19,7 +19,7 @@ To facilitate the image segmentation process, the application based on [GrabCut]
 ---
 ### ***Install Image Labelling App***
 
-For the installation it is necessary to clone the current repository in a local repository. If you don't have GitHub installed yet, you should.
+For the installation is necessary to clone the current repository in a local repository. If you don't have GitHub installed yet, you should.
 If you are on Linux you can run the following command:
 
 	sudo apt-get install git
@@ -54,5 +54,69 @@ If all goes well, you should be seeing what is shown in the following image on y
 
 </p>
 <p align="center">
-<img src ="./doc/dark.png" alt="drawing" width="700"/>
+<img src ="./doc/media/dark.png" alt="def" width="600"/>
 </p>
+
+
+---
+<h2 align="center">How to use?</h3>
+
+
+After the application is launched and what is shown in the previous image appears on the screen, the application is ready to start using. But before continuing, let's save the images to tag in the recommended folder, which is located in the project folder *-> DataLabelling -> media -> inputs*. After this we are going to introduce the labels that we want to generate. For this we are going to find the file *labels.txt* and we are going to open it. After opening, we are going to write each of the labels, separating each one with a new line (enter). When the labels are ready, we proceed to save the changes and exit the text editor. 
+
+</p>
+<p align="center">
+<img src ="./doc/media/labels.gif" alt="gif_labels" width="700"/>
+</p>
+
+Then, we can open the application by following the steps that had already been mentioned.
+
+</p>
+<p align="center">
+<img src ="./doc/media/opening.gif" alt="gif_opening" width="700"/>
+</p>
+
+Once the application is open, we will have the main menu on the screen. Some of the buttons on the graphical interface have shortcuts that we can see in the following table: 
+
+| **Button** | **Shortcut** |
+|:-----------|:------------:|
+|Open file   |Ctrl + O      |
+|Rectangle   |Ctrl + R      |
+|Background  |Ctrl + B      |
+|Foreground  |Ctrl + F      |
+|Iteration   |Ctrl + I      |
+|New         |Ctrl + N      |
+|Open file   |Ctrl + O      |
+|Previous    |Ctrl + Left   |
+|Next        |Ctrl + Right  |
+|SAVE        |Ctrl + S      |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
