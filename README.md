@@ -61,6 +61,7 @@ If all goes well, you should be seeing what is shown in the following image on y
 ---
 <h2 align="center">How to use?</h3>
 
+### ***Basic configuration of the App***
 
 After the application is launched and what is shown in the previous image appears on the screen, the application is ready to start using. But before continuing, let's save the images to tag in the recommended folder, which is located in the project folder *-> DataLabelling -> media -> inputs*. After this we are going to introduce the labels that we want to generate. For this we are going to find the file *labels.txt* and we are going to open it. After opening, we are going to write each of the labels, separating each one with a new line (enter). When the labels are ready, we proceed to save the changes and exit the text editor. 
 
@@ -92,31 +93,36 @@ Once the application is open, we will have the main menu on the screen. Some of 
 |SAVE        |Ctrl + S      |
 
 
+### ***Use of the App***
 
 
+After the application appears on the screen, there is no room for errors. As already mentioned, the images or videos to be segmented must be in the *inputs* folder. What follows is to click on the *Open file* button or use the shortcut, after that a file browser will appear on the screen and in this we will open the *media* folder and locate the files to segment.
+
+After selecting the files we are ready to start segmenting images. To begin we are going to select the area of interest by clicking on the **Rectangle** button and drawing on the image. If we want to see the result of the segmentation only selecting the area with the rectangle, we press the **Iteration** button. Otherwise, if we want to improve the segmentation process from the first iteration, we can select the Background and Foreground regions by selecting the corresponding button.
+
+After executing the first iteration, you can continue making corrections on the foreground and background areas until the user considers that the segmentation process is complete.
+
+</p>
+<p align="center">
+<img src ="./doc/media/use.gif" alt="gif_use" width="700"/>
+</p>
+
+Finally, the results of the segmentation process and the time stamps for each of the images are saved in the **media** folder.
+
+</p>
+<p align="center">
+<img src ="./doc/media/outs.png" alt="outputs" width="600"/>
+</p>
+
+# **This project is being developed by:**
+
+✈️ Andrea Juliana Ruiz Gómez, [GitHub](https://github.com/andrearuizg), Email: andrea_ruiz@javeriana.edu.co
+
+🏎️ Pedro Elí Ruiz Zárate, [GitHub](https://github.com/PedroRuizCode), Email: pedro.ruiz@javeriana.edu.co
 
 
+# **With the support of:**
 
+👨🏻‍🏫 Francisco Carlos Calderón Bocanegra, [GitHub](https://github.com/calderonf)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+👨🏻‍💻 John Alberto Betancourt Gonzales, [GitHub](https://github.com/JohnBetaCode)
