@@ -115,14 +115,14 @@ Finally, the results of the segmentation process and the time stamps for each of
 </p>
 
 ---
-# **This project is being developed by:**
+## *This project is being developed by:*
 
 ✈️ Andrea Juliana Ruiz Gómez, [GitHub](https://github.com/andrearuizg), Email: andrea_ruiz@javeriana.edu.co
 
 🏎️ Pedro Elí Ruiz Zárate, [GitHub](https://github.com/PedroRuizCode), Email: pedro.ruiz@javeriana.edu.co
 
 
-# **With the support of:**
+### **With the support of:**
 
 👨🏻‍🏫 Francisco Carlos Calderón Bocanegra, [GitHub](https://github.com/calderonf)
 
