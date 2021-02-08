@@ -114,6 +114,7 @@ Finally, the results of the segmentation process and the time stamps for each of
 <img src ="./doc/media/outs.png" alt="outputs" width="600"/>
 </p>
 
+---
 # **This project is being developed by:**
 
 ✈️ Andrea Juliana Ruiz Gómez, [GitHub](https://github.com/andrearuizg), Email: andrea_ruiz@javeriana.edu.co
