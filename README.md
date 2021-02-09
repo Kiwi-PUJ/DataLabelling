@@ -62,7 +62,7 @@ Besides this, there are other post-installation steps for Linux. To complete the
 	newgrp docker
 
 
-If you are not working on Linux, you can install by visiting the [official website](https://docs.docker.com/get-docker/).
+*If you are not working on Linux, you can install by visiting the* [official website](https://docs.docker.com/get-docker/).
 
 To run the Image Labelling App Docker image, verify that you are on the **DataLabelling** path and run the following command:
 
