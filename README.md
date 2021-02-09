@@ -42,7 +42,27 @@ After installing and configuring GitHub on your computer, you must clone the rep
 ---
 ### ***Build and Run Docker Image***
 
-The Image Labelling App dependencies, compilation, and configuration are packaged in a Docker Image. Before continuing, make sure you have Docker installed on your device. If it is not installed you can do it by visiting the [official website](https://docs.docker.com/get-docker/).
+The Image Labelling App dependencies, compilation, and configuration are packaged in a Docker Image. Before continuing, make sure you have Docker installed on your device. If it is not installed and you are working on Linux, you can run the following commands in a terminal:
+
+	sudo apt-get update
+ 	sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+
+This can take a while. When the installation is done you can test it by running the Docker image *hello-world*. 
+
+	sudo docker run hello-world
+
+
+If the installation was done correctly, you should see some informational text on the screen.
+
+Besides this, there are other post-installation steps for Linux. To complete them, run the following commands:
+
+	sudo groupadd docker
+	sudo usermod -aG docker $USER
+	newgrp docker
+
+
+If you are not working on Linux, you can install by visiting the [official website](https://docs.docker.com/get-docker/).
 
 To run the Image Labelling App Docker image, verify that you are on the **DataLabelling** path and run the following command:
 
@@ -96,7 +116,7 @@ Once the application is open, we will have the main menu on the screen. Some of 
 ### ***Use of the App***
 
 
-After the application appears on the screen, there is no room for errors. As already mentioned, the images or videos to be segmented must be in the *inputs* folder. What follows is to click on the *Open file* button or use the shortcut, after that a file browser will appear on the screen and in this we will open the *media* folder and locate the files to segment.
+After the application appears on the screen, the application is ready to use. As already mentioned, the images or videos to be segmented must be in the *inputs* folder. What follows is to click on the *Open file* button or use the shortcut, after that a file browser will appear on the screen and in this we will open the *media* folder and locate the files to segment.
 
 After selecting the files we are ready to start segmenting images. To begin we are going to select the area of interest by clicking on the **Rectangle** button and drawing on the image. If we want to see the result of the segmentation only selecting the area with the rectangle, we press the **Iteration** button. Otherwise, if we want to improve the segmentation process from the first iteration, we can select the Background and Foreground regions by selecting the corresponding button.
 
@@ -126,4 +146,4 @@ Finally, the results of the segmentation process and the time stamps for each of
 
 👨🏻‍🏫 Francisco Carlos Calderón Bocanegra, [GitHub](https://github.com/calderonf)
 
-👨🏻‍💻 John Alberto Betancourt Gonzales, [GitHub](https://github.com/JohnBetaCode)
+👨🏻‍💻 John Alberto Betancourt Gonzalez, [GitHub](https://github.com/JohnBetaCode)
