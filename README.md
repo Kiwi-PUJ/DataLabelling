@@ -79,7 +79,7 @@ If all goes well, you should be seeing what is shown in the following image on y
 
 
 ---
-<h2 align="center">How to use?</h3>
+<h2 align="center">How to use?</h2>
 
 ### ***Basic configuration of the App***
 
