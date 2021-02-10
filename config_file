@@ -51,7 +51,7 @@ PROJECT_BRIEF          = "Labelling app software developed with Grabcut"
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = ./documentation/logo.png
+PROJECT_LOGO           = ./documentation/media/logo.png
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is

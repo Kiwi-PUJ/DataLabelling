@@ -3,7 +3,7 @@
 
 </p>
 <p align="center">
-<img src ="./doc/media/log.png" alt="Logo" width="1200"/>
+<img src ="./documentation/media/log.png" alt="Logo" width="1200"/>
 </p>
 
 Considering the impact on the world of artificial intelligence and process automation in recent years, semi-autonomous systems have been developed that act responding to signals from their environment. An example is food delivery robots that establish their trajectory from images of their surroundings. To develop a system like this it is necessary to make use of segmentation algorithms trained to recognize obstacles, and to train these algorithms, databases of segmented images corresponding to the environment in which the robot will operate are required.
@@ -11,7 +11,7 @@ Considering the impact on the world of artificial intelligence and process autom
 To facilitate the image segmentation process, the application based on [GrabCut](https://docs.opencv.org/master/d8/d83/tutorial_py_grabcut.html) available in this repository was developed.
 </p>
 <p align="center">
-<img src ="./doc/media/INTRO.png" alt="Intro" width="300"/>
+<img src ="./documentation/media/INTRO.png" alt="Intro" width="300"/>
 </p>
 
 **Status**: In development (code updates may be submitted after publication)
@@ -74,7 +74,7 @@ If all goes well, you should be seeing what is shown in the following image on y
 
 </p>
 <p align="center">
-<img src ="./doc/media/dark.png" alt="def" width="600"/>
+<img src ="./documentation/media/dark.png" alt="def" width="600"/>
 </p>
 
 
@@ -87,14 +87,14 @@ After the application is launched and what is shown in the previous image appear
 
 </p>
 <p align="center">
-<img src ="./doc/media/labels.gif" alt="gif_labels" width="700"/>
+<img src ="./documentation/media/labels.gif" alt="gif_labels" width="700"/>
 </p>
 
 Then, we can open the application by following the steps that had already been mentioned.
 
 </p>
 <p align="center">
-<img src ="./doc/media/opening.gif" alt="gif_opening" width="700"/>
+<img src ="./documentation/media/opening.gif" alt="gif_opening" width="700"/>
 </p>
 
 Once the application is open, we will have the main menu on the screen. Some of the buttons on the graphical interface have shortcuts that we can see in the following table: 
@@ -124,14 +124,14 @@ After executing the first iteration, you can continue making corrections on the 
 
 </p>
 <p align="center">
-<img src ="./doc/media/use.gif" alt="gif_use" width="700"/>
+<img src ="./documentation/media/use.gif" alt="gif_use" width="700"/>
 </p>
 
 Finally, the results of the segmentation process and the time stamps for each of the images are saved in the **media** folder.
 
 </p>
 <p align="center">
-<img src ="./doc/media/outs.png" alt="outputs" width="600"/>
+<img src ="./documentation/media/outs.png" alt="outputs" width="600"/>
 </p>
 
 ---
