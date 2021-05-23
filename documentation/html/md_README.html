@@ -23,7 +23,6 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Labelling app
-   &#160;<span id="projectnumber">1</span>
    </div>
    <div id="projectbrief">Labelling app software developed with Grabcut</div>
   </td>
@@ -71,15 +70,14 @@ $(function() {
 <div class="textblock"><h1 align="center">Image Labelling App </h1>
 <h5 align="center">An image labelling application to use in neural network training.</h5>
 <p align="center"></p>
-<p><img src="./doc/media/log.png" alt="Logo" width="1200" class="inline"/> </p>
+<p><img src="./documentation/media/log.png" alt="Logo" width="1200" class="inline"/> </p>
 <p>Considering the impact on the world of artificial intelligence and process automation in recent years, semi-autonomous systems have been developed that act responding to signals from their environment. An example is food delivery robots that establish their trajectory from images of their surroundings. To develop a system like this it is necessary to make use of segmentation algorithms trained to recognize obstacles, and to train these algorithms, databases of segmented images corresponding to the environment in which the robot will operate are required.</p>
 <p>To facilitate the image segmentation process, the application based on <a href="https://docs.opencv.org/master/d8/d83/tutorial_py_grabcut.html">GrabCut</a> available in this repository was developed. </p>
 <p align="center"></p>
-<p><img src="./doc/media/INTRO.png" alt="Intro" width="300" class="inline"/> </p>
+<p><img src="./documentation/media/INTRO.png" alt="Intro" width="300" class="inline"/> </p>
 <p><b>Status</b>: In development (code updates may be submitted after publication)</p>
 <hr  />
- <h3><a class="anchor" id="autotoc_md1"></a>
-&lt;em&gt;&lt;strong&gt;Install Image Labelling App&lt;/strong&gt;&lt;/em&gt;</h3>
+ <h3 align="left">Install Image Labelling App </h3>
 <p>For the installation is necessary to clone the current repository in a local repository. If you don't have GitHub installed yet, you should. If you are on Linux you can run the following command: </p><pre class="fragment">sudo apt-get install git
 </pre><p>Now you need to configure GitHub. For this run the following commands: </p><pre class="fragment">git config --global user.name "user_name"
 git config --global user.email "email_id"
@@ -88,8 +86,7 @@ git config --global user.email "email_id"
 </pre><p><em>If you are not working on Linux you must clone the repository from the GitHub application.</em></p>
 <p><b>Now the application files will be on your device.</b></p>
 <hr  />
- <h3><a class="anchor" id="autotoc_md3"></a>
-&lt;em&gt;&lt;strong&gt;Build and Run Docker Image&lt;/strong&gt;&lt;/em&gt;</h3>
+ <h3 align="left">Build and Run Docker Image </h3>
 <p>The Image Labelling App dependencies, compilation, and configuration are packaged in a Docker Image. Before continuing, make sure you have Docker installed on your device. If it is not installed and you are working on Linux, you can run the following commands in a terminal: </p><pre class="fragment">sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 </pre><p>This can take a while. When the installation is done you can test it by running the Docker image <em>hello-world</em>. </p><pre class="fragment">sudo docker run hello-world
@@ -101,15 +98,17 @@ newgrp docker
 <p>To run the Image Labelling App Docker image, verify that you are on the <b>DataLabelling</b> path and run the following command: </p><pre class="fragment">bash start.sh
 </pre><p>If it's the first time probably is going to take a while.</p>
 <p>If all goes well, you should be seeing what is shown in the following image on your screen:</p>
-<p><img src="./doc/media/dark.png" alt="def" width="600" class="inline"/> </p>
+<p align="center"></p>
+<p><img src="./documentation/media/dark.png" alt="def" width="600" class="inline"/> </p>
 <hr  />
  <h2 align="center">How to use?</h2>
-<h3><a class="anchor" id="autotoc_md5"></a>
-&lt;em&gt;&lt;strong&gt;Basic configuration of the App&lt;/strong&gt;&lt;/em&gt;</h3>
-<p>After the application is launched and what is shown in the previous image appears on the screen, the application is ready to start using. But before continuing, let's save the images to tag in the recommended folder, which is located in the project folder <em>-&gt; DataLabelling -&gt; media -&gt; inputs</em>. After this we are going to introduce the labels that we want to generate. For this we are going to find the file <em>labels.txt</em> and we are going to open it. After opening, we are going to write each of the labels, separating each one with a new line (enter). When the labels are ready, we proceed to save the changes and exit the text editor.</p>
-<p><img src="./doc/media/labels.gif" alt="gif_labels" width="700" class="inline"/> </p>
+<h3 align="left">Basic configuration of the App </h3>
+<p>After the application is launched and what is shown in the previous image appears on the screen, the application is ready to start using. But before continuing, let's save the images to tag in the recommended folder, which is located in the project folder <em>-&gt; DataLabelling -&gt; media -&gt; inputs</em>. After this we are going to introduce the labels that we want to generate. For this we are going to find the file <em><a class="el" href="labels_8txt.html">labels.txt</a></em> and we are going to open it. After opening, we are going to write each of the labels, separating each one with a new line (enter). When the labels are ready, we proceed to save the changes and exit the text editor.</p>
+<p align="center"></p>
+<p><img src="./documentation/media/labels.gif" alt="gif_labels" width="700" class="inline"/> </p>
 <p>Then, we can open the application by following the steps that had already been mentioned.</p>
-<p><img src="./doc/media/opening.gif" alt="gif_opening" width="700" class="inline"/> </p>
+<p align="center"></p>
+<p><img src="./documentation/media/opening.gif" alt="gif_opening" width="700" class="inline"/> </p>
 <p>Once the application is open, we will have the main menu on the screen. Some of the buttons on the graphical interface have shortcuts that we can see in the following table:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -135,21 +134,20 @@ newgrp docker
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">SAVE </td><td class="markdownTableBodyCenter">Ctrl + S  </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md6"></a>
-&lt;em&gt;&lt;strong&gt;Use of the App&lt;/strong&gt;&lt;/em&gt;</h3>
+<h3 align="left">Use of the App </h3>
 <p>After the application appears on the screen, the application is ready to use. As already mentioned, the images or videos to be segmented must be in the <em>inputs</em> folder. What follows is to click on the <em>Open file</em> button or use the shortcut, after that a file browser will appear on the screen and in this we will open the <em>media</em> folder and locate the files to segment.</p>
 <p>After selecting the files we are ready to start segmenting images. To begin we are going to select the area of interest by clicking on the <b>Rectangle</b> button and drawing on the image. If we want to see the result of the segmentation only selecting the area with the rectangle, we press the <b>Iteration</b> button. Otherwise, if we want to improve the segmentation process from the first iteration, we can select the Background and Foreground regions by selecting the corresponding button.</p>
 <p>After executing the first iteration, you can continue making corrections on the foreground and background areas until the user considers that the segmentation process is complete.</p>
-<p><img src="./doc/media/use.gif" alt="gif_use" width="700" class="inline"/> </p>
+<p align="center"></p>
+<p><img src="./documentation/media/use.gif" alt="gif_use" width="700" class="inline"/> </p>
 <p>Finally, the results of the segmentation process and the time stamps for each of the images are saved in the <b>media</b> folder.</p>
-<p><img src="./doc/media/outs.png" alt="outputs" width="600" class="inline"/> </p>
+<p align="center"></p>
+<p><img src="./documentation/media/outs.png" alt="outputs" width="600" class="inline"/> </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md8"></a>
-&lt;strong&gt;This project is being developed by:&lt;/strong&gt;</h2>
+ <h2 align="left">This project is being developed by: </h2>
 <p>✈️ Andrea Juliana Ruiz Gómez, <a href="https://github.com/andrearuizg">GitHub</a>, Email: <a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'a_r'+'ui'+'z@j'+'av'+'eri'+'an'+'a.e'+'du'+'.co'; return false;">andre<span style="display: none;">.nosp@m.</span>a_ru<span style="display: none;">.nosp@m.</span>iz@ja<span style="display: none;">.nosp@m.</span>veri<span style="display: none;">.nosp@m.</span>ana.e<span style="display: none;">.nosp@m.</span>du.c<span style="display: none;">.nosp@m.</span>o</a></p>
 <p>🏎️ Pedro Elí Ruiz Zárate, <a href="https://github.com/PedroRuizCode">GitHub</a>, Email: <a href="#" onclick="location.href='mai'+'lto:'+'ped'+'ro'+'.ru'+'iz'+'@ja'+'ve'+'ria'+'na'+'.ed'+'u.'+'co'; return false;">pedro<span style="display: none;">.nosp@m.</span>.rui<span style="display: none;">.nosp@m.</span>z@jav<span style="display: none;">.nosp@m.</span>eria<span style="display: none;">.nosp@m.</span>na.ed<span style="display: none;">.nosp@m.</span>u.co</a></p>
-<h3><a class="anchor" id="autotoc_md9"></a>
-&lt;strong&gt;With the support of:&lt;/strong&gt;</h3>
+<h3 align="left">With the support of: </h3>
 <p>👨🏻‍🏫 Francisco Carlos Calderón Bocanegra, <a href="https://github.com/calderonf">GitHub</a></p>
 <p>👨🏻‍💻 John Alberto Betancourt Gonzalez, <a href="https://github.com/JohnBetaCode">GitHub</a> </p>
 </div></div><!-- contents -->

@@ -1,10 +1,18 @@
 var searchData=
 [
-  ['image_5f1_42',['image_1',['../classmain_1_1GUI.html#adb0cd81f7a3f54a2b6f9d132b0a71489',1,'main::GUI']]],
-  ['img_5fcopy_43',['img_copy',['../classmain_1_1GUI.html#a5481dbb88e748d15a39d8940980bf99d',1,'main::GUI']]],
-  ['img_5fin_44',['img_in',['../classmain_1_1GUI.html#a8e549936b8563dace8236da89a96d066',1,'main::GUI']]],
-  ['img_5flabel_45',['img_label',['../classmain_1_1GUI.html#abed4809fee43c70075efd27cb0a9c742',1,'main::GUI']]],
-  ['img_5fout_46',['img_out',['../classmain_1_1GUI.html#acc020324daea1ae3fc66c1228616e0bf',1,'main::GUI']]],
-  ['ini_5fpoints_47',['ini_points',['../classmain_1_1GUI.html#a66341e9e48c4b10d1192e237caf7cab0',1,'main::GUI']]],
-  ['iteration_5f_48',['iteration_',['../classmain_1_1GUI.html#abe49c128936a1cb84fe562714cd9f050',1,'main::GUI']]]
+  ['fgd_5fmodel_28',['FGD_model',['../classmain_1_1GUI.html#ae3dcae32fb9d6967945d3f1c60c9e503',1,'main::GUI']]],
+  ['file_5fnum_29',['file_num',['../classmain_1_1GUI.html#a567c6f96d916a77c90e34ff120dafeae',1,'main::GUI']]],
+  ['file_5fvid_30',['file_vid',['../classmain_1_1GUI.html#a964362d634dd6084f728b306a43992b2',1,'main::GUI']]],
+  ['fin_5fpoints_31',['fin_points',['../classmain_1_1GUI.html#a26f0313f99a0522a78eaa77a0cebad3d',1,'main::GUI']]],
+  ['flag_5fcircle_5fbg_32',['flag_circle_bg',['../classmain_1_1GUI.html#aef81a695fc9a731ca0d70f71f3f82aa3',1,'main::GUI']]],
+  ['flag_5fcircle_5ffg_33',['flag_circle_fg',['../classmain_1_1GUI.html#ac9f7ab9262be438b4a83e2fd2019c8a8',1,'main::GUI']]],
+  ['flag_5ffile_34',['flag_file',['../classmain_1_1GUI.html#a968356afd968465905946ea881f15359',1,'main::GUI']]],
+  ['flag_5frect_35',['flag_rect',['../classmain_1_1GUI.html#abcbea2e09c34e74ef2feb810a11ead5a',1,'main::GUI']]],
+  ['flag_5fsave_36',['flag_save',['../classmain_1_1GUI.html#a5816d9d5bd57a7b1867718cec769297a',1,'main::GUI']]],
+  ['flag_5fvid_37',['flag_vid',['../classmain_1_1GUI.html#a7229e556cae35ddb0b5518b7d120282b',1,'main::GUI']]],
+  ['foreground_5f_38',['foreground_',['../classmain_1_1GUI.html#a51fe2be19e33a52c2dc51aea942a5d48',1,'main::GUI']]],
+  ['frame_5fact_39',['frame_act',['../classmain_1_1GUI.html#a2dc68e362ee0434bfbcfc82b49a3da05',1,'main::GUI']]],
+  ['frame_5fnum_40',['frame_num',['../classmain_1_1GUI.html#a9b89ec90899a2eff48d08247831c4843',1,'main::GUI']]],
+  ['fs_41',['fs',['../classmain_1_1GUI.html#a0f6c83b9ba046d2c8310ac704badc434',1,'main::GUI']]],
+  ['fullscreen_5f_42',['fullScreen_',['../classmain_1_1GUI.html#acd4b40847fc63b3f54a96fa26d4536ee',1,'main::GUI']]]
 ];

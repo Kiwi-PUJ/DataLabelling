@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['value_5fsp_149',['value_sp',['../classmain_1_1GUI.html#aed60fff2b9e620cbacd8702fd8f4f335',1,'main::GUI']]],
-  ['vid_150',['vid',['../classmain_1_1GUI.html#aaa0d872a52fc6ce410a948aabd612b3c',1,'main::GUI']]]
+  ['spin_160',['spin',['../classmain_1_1GUI.html#ae1343ec7461a6cdaa7240310dee1f18b',1,'main::GUI']]],
+  ['start_161',['start',['../classmain_1_1GUI.html#a2b394a28a6a8644ed3fec147becba1bc',1,'main::GUI']]]
 ];

@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['value_5fsp_74',['value_sp',['../classmain_1_1GUI.html#aed60fff2b9e620cbacd8702fd8f4f335',1,'main::GUI']]],
-  ['vid_75',['vid',['../classmain_1_1GUI.html#aaa0d872a52fc6ce410a948aabd612b3c',1,'main::GUI']]]
+  ['sel_5fln_74',['sel_LN',['../classmain_1_1GUI.html#afa9c7ae4044ad9f5d74ffc3dabacf833',1,'main::GUI']]],
+  ['sh_5fspin_5fval_75',['sh_spin_val',['../classmain_1_1GUI.html#a470f1451e10502086695bf99707b9e97',1,'main::GUI']]],
+  ['show_5falert_76',['show_alert',['../classmain_1_1GUI.html#a73d24ffecc7c8ddae17548184fab5e48',1,'main::GUI']]],
+  ['showimage_5f_77',['showImage_',['../classmain_1_1GUI.html#aefb230e6818e1030e9691a549b2113fe',1,'main::GUI']]],
+  ['spin_78',['spin',['../classmain_1_1GUI.html#ae1343ec7461a6cdaa7240310dee1f18b',1,'main::GUI']]],
+  ['start_79',['start',['../classmain_1_1GUI.html#a2b394a28a6a8644ed3fec147becba1bc',1,'main::GUI']]]
 ];
