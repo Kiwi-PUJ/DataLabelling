@@ -135,6 +135,11 @@ Finally, the results of the segmentation process and the time stamps for each of
 </p>
 
 ---
+<h2 align="left"> Code Documentation </h2>
+
+The code documentation was done using PEP8 and Doxygen and is available [here](http://labellingkiwipuj.125mb.com/)
+
+---
 <h2 align="left"> This project is being developed by: </h2>
 
 ✈️ Andrea Juliana Ruiz Gómez, [GitHub](https://github.com/andrearuizg), Email: andrea_ruiz@javeriana.edu.co
