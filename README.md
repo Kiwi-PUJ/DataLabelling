@@ -14,7 +14,7 @@ To facilitate the image segmentation process, the application based on [GrabCut]
 <img src ="./documentation/media/INTRO.png" alt="Intro" width="300"/>
 </p>
 
-**Status**: In development (code updates may be submitted after publication)
+**Status**: Finished (Waiting for evaluation)
 
 ---
 <h3 align="left"> Install Image Labelling App </h3>
