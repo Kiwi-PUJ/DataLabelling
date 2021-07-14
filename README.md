@@ -1,4 +1,4 @@
-<h1 align="center"> Image Labelling App </h1>
+<h1 align="center"> VOILA: A Video or Image Labeling Applicationused for fast Semantic Segmentation </h1>
 <h5 align="center">An image labelling application to use in neural network training.</h5>
 
 </p>
